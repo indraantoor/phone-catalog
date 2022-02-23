@@ -1,19 +1,29 @@
 import styled from "styled-components";
 
 const PhoneContainer = styled.div`
-  background-color: grey;
+  background-color: #f2ecff;
   width: 250px;
-  height: 400px;
+  height: 500px;
+  border: 1px solid #f2ecff;
+  color: #1e1e1e;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid #4a4a4a;
+  }
 `;
 
 const ImgContainer = styled.div`
-  background-color: blue;
   height: 75%;
+  object-fit: contain;
 `;
 
 const InfoContainer = styled.div`
   padding: 10px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justfiy-content: space-between;
+  height: 100px;
 `;
 
 const PhoneTitle = styled.h1`
@@ -31,17 +41,23 @@ const Color = styled.h2`
   font-weight: 500;
 `;
 
-const Phone = () => {
+const PhoneImgContainer = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const Phone = ({ title, price, imgUrl, color }) => {
   return (
     <div>
       <PhoneContainer>
         <ImgContainer>
-          <PhoneTitle>Phone1</PhoneTitle>
+          <PhoneImgContainer src={imgUrl} alt="Phone" />
         </ImgContainer>
         <InfoContainer>
-          <PhoneTitle>Apple iPhone 7</PhoneTitle>
-          <Color>Color: Blue</Color>
-          <Price>$499</Price>
+          <PhoneTitle>{title}</PhoneTitle>
+          <Color>Color: {color}</Color>
+          <Price>$ {price}</Price>
         </InfoContainer>
       </PhoneContainer>
     </div>
