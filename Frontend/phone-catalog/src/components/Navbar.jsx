@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const NavbarContainer = styled.nav`
   height: 60px;
-  background-color: black;
+  background-color: #1e1e1e;
   color: white;
 `;
 
 const Wrapper = styled.div`
-  padding: 2px 20px;
+  padding: 2px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +22,7 @@ const Left = styled.div`
 
 const LogoTitle = styled.h1`
   font-weight: bold;
+  cursor: pointer;
 `;
 
 const Right = styled.div`
