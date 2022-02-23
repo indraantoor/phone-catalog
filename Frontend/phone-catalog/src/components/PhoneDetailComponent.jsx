@@ -37,9 +37,7 @@ const PhoneImg = styled.img`
 `;
 
 const Right = styled.div`
-  margin-top: 50px;
-  margin-right: 60px;
-  margin-left: 40px;
+  margin: 50px 60px 40px;
 
   @media (max-width: 735px) {
     display: flex;

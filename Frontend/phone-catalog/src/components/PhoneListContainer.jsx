@@ -18,9 +18,7 @@ const PhoneCatalogHeading = styled.h1`
 `;
 
 const Wrapper = styled.div`
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-top: 30px;
+  margin: 30px 60px 60px;
   display: grid;
   grid-template-columns: repeat(auto-fill, 18rem);
   grid-auto-rows: 500px;
