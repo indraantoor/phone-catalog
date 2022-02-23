@@ -7,6 +7,7 @@ const App = () => {
     <div className="App">
       <Navbar />
       <Hero />
+      <h1>Phone Catalog</h1>
     </div>
   );
 };
