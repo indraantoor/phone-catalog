@@ -51,12 +51,12 @@ const PhoneImgContainer = styled.img`
 const Phone = ({ title, price, imgUrl, color, id }) => {
   let navigate = useNavigate();
 
-  const handleClick = (e, id) => {
+  const navigateToProduct = (e, id) => {
     navigate(`/${id}`);
   };
 
   return (
-    <div onClick={(e) => handleClick(e, id)}>
+    <div onClick={(e) => navigateToProduct(e, id)}>
       <PhoneContainer>
         <ImgContainer>
           <PhoneImgContainer src={imgUrl} alt="Phone" />

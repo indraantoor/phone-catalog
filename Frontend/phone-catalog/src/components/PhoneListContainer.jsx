@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import Phone from "./Phone";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import changePhoneCatalogItems from "../actionCreators/changePhoneCatalogItems";
-import changeCatalogItem from "../actionCreators/changeCatalogItem";
 import Loader from "./Loader";
 import changeLoading from "../actionCreators/changeLoading";
 
@@ -30,15 +29,22 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-const PhoneListContainer = () => {
-  //   const [isLoading, setLoading] = useState(true);
-  //   const [phones, setPhones] = useState([]);
+function getPhoneItem(phone) {
+  return (
+    <Phone
+      key={phone.id}
+      title={phone.title}
+      color={phone.color}
+      price={phone.price}
+      imgUrl={phone.imgUrl}
+      id={phone.id}
+    />
+  );
+}
 
+const PhoneListContainer = () => {
   const isLoading = useSelector((state) => state.loading);
   const phones = useSelector((state) => state.phoneCatalogItems);
-  const currentState = useSelector((state) => state);
-  console.log(currentState);
-  console.log(phones);
 
   const dispatch = useDispatch();
 
@@ -50,7 +56,6 @@ const PhoneListContainer = () => {
           "http://localhost:8080/phones/"
         );
         dispatch(changePhoneCatalogItems(phoneCatalogRes.data));
-        // setLoading(false);
         dispatch(changeLoading(false));
       } catch (err) {
         dispatch(changeLoading(false));
@@ -66,18 +71,7 @@ const PhoneListContainer = () => {
   return (
     <PhoneCatalogContainer>
       <PhoneCatalogHeading>Phone Catalog</PhoneCatalogHeading>
-      <Wrapper>
-        {phones.map((phone) => (
-          <Phone
-            key={phone.id}
-            title={phone.title}
-            color={phone.color}
-            price={phone.price}
-            imgUrl={phone.imgUrl}
-            id={phone.id}
-          />
-        ))}
-      </Wrapper>
+      <Wrapper>{phones.map((phone) => getPhoneItem(phone))}</Wrapper>
     </PhoneCatalogContainer>
   );
 };

@@ -67,9 +67,7 @@ const BuyNowBtn = styled.button`
 `;
 
 const PhoneDetailComponent = () => {
-  // const [isLoading, setLoading] = useState(true);
   const [isError, setError] = useState(false);
-
   const isLoading = useSelector((state) => state.loading);
   const { id } = useParams();
   const phone = useSelector((state) => state.catalogItem);
