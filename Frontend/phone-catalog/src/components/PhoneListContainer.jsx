@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Phone from "./Phone";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import changePhoneCatalogItems from "../actionCreators/changePhoneCatalogItems";
+import changeCatalogItem from "../actionCreators/changeCatalogItem";
 
 const PhoneCatalogContainer = styled.div`
   height: 100%;
@@ -27,7 +30,14 @@ const Wrapper = styled.div`
 
 const PhoneListContainer = () => {
   const [isLoading, setLoading] = useState(true);
-  const [phones, setPhones] = useState([]);
+  //   const [phones, setPhones] = useState([]);
+
+  const phones = useSelector((state) => state.phoneCatalogItems);
+  const currentState = useSelector((state) => state);
+  console.log(currentState);
+  console.log(phones);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getPhones = async () => {
@@ -35,34 +45,31 @@ const PhoneListContainer = () => {
         const phoneCatalogRes = await axios.get(
           "http://localhost:8080/phones/"
         );
-        setPhones(phoneCatalogRes.data);
+        dispatch(changePhoneCatalogItems(phoneCatalogRes.data));
         setLoading(false);
       } catch (err) {}
     };
     getPhones();
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  console.log(phones);
-
   return (
     <PhoneCatalogContainer>
       <PhoneCatalogHeading>Phone Catalog</PhoneCatalogHeading>
       <Wrapper>
-        {phones.map(function displayPhoneInformation(phone) {
-          return (
-            <Phone
-              key={phone.id}
-              title={phone.title}
-              color={phone.color}
-              price={phone.price}
-              imgUrl={phone.imgUrl}
-            />
-          );
-        })}
+        {phones.map((phone) => (
+          <Phone
+            key={phone.id}
+            title={phone.title}
+            color={phone.color}
+            price={phone.price}
+            imgUrl={phone.imgUrl}
+            id={phone.id}
+          />
+        ))}
       </Wrapper>
     </PhoneCatalogContainer>
   );

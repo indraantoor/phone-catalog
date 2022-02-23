@@ -47,9 +47,14 @@ const PhoneImgContainer = styled.img`
   object-fit: cover;
 `;
 
-const Phone = ({ title, price, imgUrl, color }) => {
+const handleClick = (e, id) => {
+  console.log("clicked");
+  console.log(id);
+};
+
+const Phone = ({ title, price, imgUrl, color, id }) => {
   return (
-    <div>
+    <div onClick={(e) => handleClick(e, id)}>
       <PhoneContainer>
         <ImgContainer>
           <PhoneImgContainer src={imgUrl} alt="Phone" />
