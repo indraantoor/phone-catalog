@@ -5,6 +5,10 @@ const HeroContainer = styled.div`
   background-color: #f2ecff;
   height: 450px;
   color: #1e1e1e;
+
+  @media (max-width: 439px) {
+    height: 550px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -12,16 +16,28 @@ const Wrapper = styled.div`
   height: 300px;
   display: grid;
   grid-template-columns: 55% 45%;
+  @media (max-width: 855px) {
+    grid-template-columns: 100% 0%;
+  }
 `;
 
 const Left = styled.div`
   padding-left: 60px;
   padding-top: 80px;
   padding-bottom: 280px;
+
+  @media (max-width: 455px) {
+    padding-top: 50px;
+  }
 `;
+
 const Right = styled.div`
   height: 450px;
   object-fit: contain;
+
+  @media (max-width: 855px) {
+    display: none;
+  }
 `;
 
 const HeroHeading = styled.h1``;
@@ -52,6 +68,10 @@ const SignUpBtn = styled.button`
 
   &:active {
     font-size: 12px;
+  }
+
+  @media (max-width: 855px) {
+    margin-top: 10px;
   }
 `;
 

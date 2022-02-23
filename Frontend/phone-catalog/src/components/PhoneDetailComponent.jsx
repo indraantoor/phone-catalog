@@ -13,6 +13,13 @@ const PhoneDetailContainer = styled.div`
   grid-template-columns: 50% 50%;
   grid-column-gap: 30px;
   color: #1e1e1e;
+
+  @media (max-width: 735px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Left = styled.div`
@@ -32,6 +39,14 @@ const PhoneImg = styled.img`
 const Right = styled.div`
   margin-top: 50px;
   margin-right: 60px;
+  margin-left: 40px;
+
+  @media (max-width: 735px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const PhoneTitle = styled.h1`
@@ -60,6 +75,10 @@ const BuyNowBtn = styled.button`
   font-weight: bold;
   background-color: #00c896;
   font-size: 18px;
+
+  @media (max-width: 805px) {
+    width: 50%;
+  }
 
   &:active {
     font-size: 17px;
