@@ -37,6 +37,42 @@ const phonesData = [
     imgUrl: "https://m.media-amazon.com/images/I/81vDZyJQ-4L._SY741_.jpg",
     price: 529,
   },
+  {
+    id: 5,
+    title: "Google Pixel 6 Pro",
+    description:
+      "The powerful Google Tensor processor is the first processor designed by Google and made for Pixel; takes performance to a whole new level. Advanced camera system with wide and ultrawide lenses, 4x optical zoom, and a main sensor that captures 150% more light. ",
+    color: "Cloudy White",
+    imgUrl: "https://m.media-amazon.com/images/I/71SGl7xwR-L._AC_SL1500_.jpg",
+    price: 529,
+  },
+  {
+    id: 6,
+    title: "Xperia 1 III",
+    description:
+      "Worlds first smartphone with 120Hz 6.5” 4K HDR OLED display. Triple camera with four focal lengths and Real-time AF tracking Win with Game Enhancers custom display, audio and mic settings",
+    color: "Black",
+    imgUrl: "https://m.media-amazon.com/images/I/71YvGj855+L._AC_SL1500_.jpg",
+    price: 1159,
+  },
+  {
+    id: 7,
+    title: "OnePlus 9 Pro",
+    description:
+      "5G Ready powered by Qualcomm Snapdragon 865 Octa-Core processor, 8GB RAM, 128GB internal memory expandable up to 1TB, Android 11.0 operating system and dual SIM. 4500 mAh battery (Non -removable) with Super Fast Charging, FAst Wireless Charging & Finger Print sensor IP68 Rated, MicroSD Card Slot (Expandable upto 1 TB), Dual Nano Sim, Hybrid Sim Slot, 5G+5G Dual stand by.",
+    color: "Pine Green",
+    imgUrl: "https://m.media-amazon.com/images/I/61nlrK+fRHL._AC_SL1500_.jpg",
+    price: 799,
+  },
+  {
+    id: 8,
+    title: "Samsung Galaxy Z Flip",
+    description:
+      "Flex Your Best Angle: With Flex Mode, just unfold your mobile phone’s screen to your best angle for hands-free pics and video calls; Choose what you want to capture, set it down, stand back and shoot your best shot. Fast Charging for Fast Living: Galaxy Z Flip3 smart phone charges fast so that all your moments last; There's a right time for downtime and a low battery signal, isn't it. One Screen, Two Apps: Launch two apps simultaneously, so you can take selfies while browsing Gallery, watch movies while texting friends, and shop multiple stores at once, on the go.",
+    color: "Black",
+    imgUrl: "https://m.media-amazon.com/images/I/61bfdXk7nfL._AC_SL1500_.jpg",
+    price: 949,
+  },
 ];
 
 module.exports = phonesData;
