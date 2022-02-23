@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const PhoneContainer = styled.div`
   background-color: #f2ecff;
@@ -47,12 +48,13 @@ const PhoneImgContainer = styled.img`
   object-fit: cover;
 `;
 
-const handleClick = (e, id) => {
-  console.log("clicked");
-  console.log(id);
-};
-
 const Phone = ({ title, price, imgUrl, color, id }) => {
+  let navigate = useNavigate();
+
+  const handleClick = (e, id) => {
+    navigate(`/${id}`);
+  };
+
   return (
     <div onClick={(e) => handleClick(e, id)}>
       <PhoneContainer>

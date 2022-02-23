@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const NavbarContainer = styled.nav`
   height: 60px;
@@ -41,7 +42,9 @@ const Navbar = () => {
     <NavbarContainer>
       <Wrapper>
         <Left>
-          <LogoTitle>Phone Catalog</LogoTitle>
+          <Link to="/">
+            <LogoTitle>Phone Catalog</LogoTitle>
+          </Link>
         </Left>
         <Right>
           <MenuItem>Home</MenuItem>

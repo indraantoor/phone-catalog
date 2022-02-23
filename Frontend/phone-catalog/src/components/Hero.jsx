@@ -20,7 +20,6 @@ const Left = styled.div`
   padding-bottom: 280px;
 `;
 const Right = styled.div`
-  background-color: yellow;
   height: 450px;
   object-fit: contain;
 `;

@@ -5,6 +5,8 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import changePhoneCatalogItems from "../actionCreators/changePhoneCatalogItems";
 import changeCatalogItem from "../actionCreators/changeCatalogItem";
+import Loader from "./Loader";
+import changeLoading from "../actionCreators/changeLoading";
 
 const PhoneCatalogContainer = styled.div`
   height: 100%;
@@ -29,9 +31,10 @@ const Wrapper = styled.div`
 `;
 
 const PhoneListContainer = () => {
-  const [isLoading, setLoading] = useState(true);
+  //   const [isLoading, setLoading] = useState(true);
   //   const [phones, setPhones] = useState([]);
 
+  const isLoading = useSelector((state) => state.loading);
   const phones = useSelector((state) => state.phoneCatalogItems);
   const currentState = useSelector((state) => state);
   console.log(currentState);
@@ -42,18 +45,22 @@ const PhoneListContainer = () => {
   useEffect(() => {
     const getPhones = async () => {
       try {
+        dispatch(changeLoading(true));
         const phoneCatalogRes = await axios.get(
           "http://localhost:8080/phones/"
         );
         dispatch(changePhoneCatalogItems(phoneCatalogRes.data));
-        setLoading(false);
-      } catch (err) {}
+        // setLoading(false);
+        dispatch(changeLoading(false));
+      } catch (err) {
+        dispatch(changeLoading(false));
+      }
     };
     getPhones();
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (
