@@ -1,6 +1,7 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 # dependencies
-/Backend/node_modules
-/Frontend/phone-catalog/node_modules
+/node_modules
 /.pnp
 .pnp.js
 
@@ -16,8 +17,6 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/Backend/.env
-/Frontend/phone-catalog/.env
 
 npm-debug.log*
 yarn-debug.log*
