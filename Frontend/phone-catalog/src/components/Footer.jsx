@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const FooterContainer = styled.footer`
   background-color: #1e1e1e;
-  height: 89px;
+  margin-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;

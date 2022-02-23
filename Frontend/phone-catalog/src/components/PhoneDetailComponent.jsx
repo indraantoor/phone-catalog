@@ -13,6 +13,7 @@ const PhoneDetailContainer = styled.div`
   grid-template-columns: 50% 50%;
   grid-column-gap: 30px;
   color: #1e1e1e;
+  height: 100%;
 
   @media (max-width: 735px) {
     display: flex;
@@ -25,14 +26,13 @@ const PhoneDetailContainer = styled.div`
 const Left = styled.div`
   margin-top: 50px;
   margin-left: 60px;
-  height: 450px;
   width: 70%;
   object-fit: contain;
 `;
 
 const PhoneImg = styled.img`
   width: 100%;
-  height: 100%;
+  height: 460px;
   object-fit: cover;
 `;
 
